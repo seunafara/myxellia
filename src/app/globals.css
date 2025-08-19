@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --bgDarkMain: #191919;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bgDarkMain {
+  @apply bg-[var(--bgDarkMain)]
+}
+
+.header {
+  @apply flex justify-between py-7
+}
+
+.content-padding {
+  @apply px-[78px]
+}
+
+.profile {
+  padding: 12px;
+  border-radius: 100%;
+  background: white;
+  height: 40px;
+  width: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-section {
+  @apply bg-white py-6
+}
+
+.welcome-section > h2 {
+  @apply text-2xl text-[var(--bgDarkMain)] font-black
+}
+
+.nav-item {
+  @apply flex space-x-3 justify-center items-center w-max rounded-lg px-10 py-2
+}
+
+.nav-item > p {
+  @apply text-[var(--bgDarkMain)] text-sm
+}
+
+.nav-item-active {
+  @apply bg-[#F5F5F5]
+}
+
+.nav-item-active > p {
+  @apply font-black
+}
+
+.sales-overview-numbers-item {
+  @apply border-[1px] border-[#E4E4E4] rounded-xl px-4 py-3 justify-evenly
+}
+
+.sales-overview-text {
+ @apply font-semibold text-xl
+}
+
+.sales-overview-text-blue {
+  @apply text-[#4545FE]
+}
+
+.sales-overview-text-green {
+  @apply text-[#12B76A] 
+}
+
+.sales-overview-text-teal {
+  @apply text-[#14B8A6] 
+}
+
+.sales-overview-text-red {
+  @apply text-[#F04438] 
+}
+
+.sales-overview-numbers-item-summary > h6 {
+  @apply text-xs text-[#3D3D3D] font-medium
+}
+
+.sales-overview-increment-text {
+  @apply text-[10px]
+}
+
+.users-overview-summary-item {
+  @apply space-y-5 w-max
+}
+
+.users-overview-summary-item > h6 {
+  @apply text-gray-600 font-normal text-sm capitalize
+}
+
+.users-overview-summary-item > h2 {
+  @apply text-gray-900 font-semibold text-2xl
+}
+
+.overview-text-link {
+  @apply flex cursor-not-allowed items-center text-[#4545FE] space-x-2
+}
+
+.calendar-wrapper {
+  @apply absolute min-h-[100vh] top-24 right-0 bg-[#121212] w-max min-w-[400px] overflow-hidden text-gray-900 font-semibold text-center
+}
+
+.calendar-item-border {
+  @apply border-[#242424] border-[0.5px] rounded-none
+}
+
+.calendar-item-date {
+  @apply h-24 text-[#BBBBBB99] text-left text-[10px] p-1.5
+}
+
+.calendar-item-day {
+  @apply text-[#969696] text-[8px] p-1.5
+}
+
+.calendar-today {
+  @apply bg-[#2525E6] text-white
+}
+
+.modal {
+  @apply min-h-[100vh] overflow-hidden absolute z-50 w-full;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-carousel-wrapper {
+  @apply grid grid-cols-3 gap-x-4 bg-white py-6 px-[78px]
+}
+
+.budgeting-modal-wrapper {
+  @apply flex justify-center items-center text-white h-full min-h-[120vh]
+}
+
+.budgeting-modal {
+  @apply flex flex-col w-[438px]
+}
+
+.budgeting-modal-header {
+  @apply rounded-lg rounded-b-none bg-[rgb(12,40,65)] p-7 pb-0
+}
+
+.budgeting-modal-icon-wrapper {
+  @apply rounded-2xl rounded-b-none bg-[#061520] px-36 py-16
+}
+
+.budgeting-modal-info {
+  @apply flex rounded-lg rounded-t-none flex-col justify-center items-center bg-white px-12 py-6 space-y-6
+}
+
+.budgeting-modal-info-text {
+  @apply flex flex-col space-y-1
+}
+
+.budgeting-modal-info-text > h2 {
+  @apply text-[var(--bgDarkMain)] text-base font-semibold
+}
+
+.budgeting-modal-info-text > h6 {
+  @apply text-[#606060] text-xs
+}
+
+.primary-button {
+  @apply w-full bg-gray-900 rounded-[72px] text-white font-medium py-4 px-9 cursor-pointer
+}
+
+.header-profile-popup {
+  @apply min-w-[496px] bg-white rounded-lg p-3 shadow-2xl absolute top-24 right-20
+}
+
+.header-profile-info {
+  @apply bg-gray-100 px-3 py-4 flex space-x-4 items-center
+}
